@@ -1,0 +1,20 @@
+{
+  "name": "codewars-stars",
+  "version": "1.0.0",
+  "description": "Hello this is a web app to fetch and compare user statistics from the Codewars API, allowing you to see who the real \"stars\" are. Enter a list of usernames to generate a dynamic leaderboard.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mikiyas-STP/codewars-stars.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mikiyas-STP/codewars-stars/issues"
+  },
+  "homepage": "https://github.com/Mikiyas-STP/codewars-stars#readme"
+}
