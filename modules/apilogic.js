@@ -1,10 +1,10 @@
-//my codewar api base
+//this file is to write my api logic
 const API_BASE_URL = 'https://www.codewars.com/api/v1/users/';
 /**
  * @param {string[]} usernames
  * @returns {Promise<object[]>} 
  */
-async function fetchUserData(usernames) {
+export async function fetchUserData(usernames) {
     const fetchPromises = usernames.map(username => 
         fetch(API_BASE_URL + username)
             .then(response => {
