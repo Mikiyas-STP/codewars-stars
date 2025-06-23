@@ -1,20 +1,27 @@
 {
   "name": "codewars-stars",
   "version": "1.0.0",
+  "type": "module",
   "description": "Hello this is a web app to fetch and compare user statistics from the Codewars API, allowing you to see who the real \"stars\" are. Enter a list of usernames to generate a dynamic leaderboard.",
-  "main": "script.js",
+  "main": "js/script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mikiyas-STP/codewars-stars.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mikiyas Gebremichael",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Mikiyas-STP/codewars-stars/issues"
   },
-  "homepage": "https://github.com/Mikiyas-STP/codewars-stars#readme"
+  "homepage": "https://github.com/Mikiyas-STP/codewars-stars#readme",
+  "devDependencies": {
+    "@babel/core": "^7.27.4",
+    "@babel/preset-env": "^7.27.2",
+    "babel-jest": "^30.0.2",
+    "jest": "^30.0.2"
+  }
 }
