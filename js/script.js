@@ -73,4 +73,46 @@ function renderTable(users) {
         tableBody.appendChild(row);
     });
 }
+// This section is for my event listners and main application logic
+async function handleGenerate(event) {
+    event.preventDefault(); //prevent browser from reloading the page
+    const usernames = usernamesInput.value.split(',')
+        .map(u => u.trim()) //trim whitespace
+        .filter(u => u); //filter empty strings
+    if (usernames.length === 0) {
+        errorMessage.textContent = 'Please enter at least one username.';
+        errorMessage.classList.remove('hidden');
+        return;
+    }
+    // --- Start Loading State ---
+    loader.classList.remove('hidden');
+    errorMessage.classList.add('hidden');
+    tableBody.innerHTML = '';
+    languageSelect.disabled = true;
+    try {
+        const usersData = await fetchUserData(usernames);
+        state.usersData = usersData;
+        state.currentLanguage = 'overall';
+        const languages = getUniqueLanguages(usersData);
+        const sortedUsers = sortUsersByRank(usersData, 'overall');
 
+        populateLanguage(languages);
+        renderTable(sortedUsers);
+    } catch (error) {
+        errorMessage.textContent = `Error: ${error.message}`;
+        errorMessage.classList.remove('hidden');
+    } finally {
+        // This block runs whether the try succeeded or failed
+        loader.classList.add('hidden');
+    }
+}
+function languageChange(event) {
+    const selectedLanguage = event.target.value;
+    state.currentLanguage = selectedLanguage;
+    // this is because i don't need to fetch data again just resort and rerender
+    const sortedUsers = sortUsersByRank(state.usersData, selectedLanguage);
+    renderTable(sortedUsers);
+}
+
+form.addEventListener('submit', handleGenerate);
+languageSelect.addEventListener('change', languageChange);
