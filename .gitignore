@@ -1,0 +1,4 @@
+# Ignore Node.js dependencies
+node_modules/
+# Ignore system files
+.DS_Store
