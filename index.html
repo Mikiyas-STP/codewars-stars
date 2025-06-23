@@ -3,11 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Codewar Stars</title>
+    <title>Codewars Stars</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <script src="script.js"></script>   
+    <header class="header">
+        <h1>Codewars Stars</h1>
+        <p>Instruction:Please enter a list of Usernames to generate a Dynamic Leaderboard.</p>
+    </header>
+
+    <main>
+        <!-- This section is for the user input -->
+        <section class="input-section">
+            <form id="user-form">
+                <label for="usernames-input">Usernames:</label>
+                <input 
+                    type="text" 
+                    id="usernames-input" 
+                    name="usernames"
+                    placeholder="e.g., user1,user2,user3" 
+                    required 
+                />
+                <button type="submit">Generate</button>
+            </form>
+        </section>
+
+        <!-- This is section for the controls specifically to seelect the language/overall rank -->
+        <section class="controls-section">
+            <label for="language-select">Filter by Language:</label>
+            <select id="language-select" name="languages" disabled>
+            </select>
+        </section>
+
+        <!--section to display the results -->
+        <section class="results-section">
+            <div id="loader" class="loader hidden"></div>
+            <p id="error-message" class="error-message hidden"></p>
+            <table id="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Clan</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboard-body">
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
