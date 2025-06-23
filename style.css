@@ -43,7 +43,7 @@ input[type="text"], select {
 }
 button {
     padding: 0.75rem 1.5rem;
-    background-color: #007bff;
+    background-color: #0056b3;
     color: white;
     border: none;
     border-radius: 4px;
@@ -53,7 +53,7 @@ button {
     margin-top: 1rem;
 }
 button:hover {
-    background-color: #0056b3;
+    background-color: #004494;
 }
 select:disabled {
     background-color: #e9ecef;
@@ -73,7 +73,7 @@ th {
 }
 /* styling for .highlight class and for the winner class and loading spin */
 .highlight {
-    background-color: #fff3cd;
+    background-color: #ffeba6;
     font-weight: bold;
 }
 .highlight td:first-child::before {
